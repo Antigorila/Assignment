@@ -38,19 +38,8 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="container text-center">
-                            <div class="d-inline-block">
-                              <select class="form-select" name="" id="">
-                                <option selected disabled>Choose role</option>
-                                <option value="teacher">Teacher</option>
-                                <option value="student">Student</option>
-                              </select>
-                            </div>
-                          </div>
-                          
-
-                          <hr>
+                        
+                        <hr>
 
                         <div class="row mb-0 text-center">
                             <div class="">

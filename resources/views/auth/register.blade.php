@@ -61,8 +61,21 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                        
+                        <div class="container text-center">
+                            <div class="d-inline-block">
+                              <select class="form-select" name="selectrole" id="selectrole">
+                                <option selected disabled>Choose role</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="student">Student</option>
+                              </select>
+                            </div>
+                          </div>
+                          <hr>
+
+
+                        <div class="row mb-0 text-center">
+                            <div class="">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
