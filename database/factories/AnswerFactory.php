@@ -18,6 +18,7 @@ class AnswerFactory extends Factory
     {
         return [
             'answer' => fake()->word(),
+            'task_id' => fake()->numberBetween(1,5)
         ];
     }
 }

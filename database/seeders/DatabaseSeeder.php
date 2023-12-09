@@ -14,12 +14,16 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(
             [
-                AnswerSeeder::class,
-                TaskSeeder::class,
                 UserSeeder::class,
                 CategorySeeder::class,
             ]
+            );
+        $this->call(
+            [
+                TaskSeeder::class
+            ]
         );
+       $this->call( AnswerSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

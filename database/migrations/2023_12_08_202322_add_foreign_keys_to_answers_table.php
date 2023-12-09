@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        Schema::create('answers', function (Blueprint $table) {
-            $table->id();
-            $table->string('answer');
-            $table->integer('task_id')->index('task_id');
-            $table->timestamps();
+        Schema::table('answers', function (Blueprint $table) {
+            $table->foreign(['task_id'], 'answers_ibfk_3')->references(['id'])->on('tasks');
         });
-
     }
 
     /**
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::table('answers', function (Blueprint $table) {
+            $table->dropForeign('answers_ibfk_3');
+        });
     }
 };

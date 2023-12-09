@@ -17,9 +17,9 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            'category_id' => fake()->numberBetween(1, 10),
             'assignment_title' => fake()->word(),
             'assignment' => fake()->sentence(),
+            'category_id' => fake()->numberBetween(1,10),
         ];
     }
 }
