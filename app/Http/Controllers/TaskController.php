@@ -37,7 +37,7 @@ class TaskController extends Controller
      */
     public function show(task $task)
     {
-        //
+        return view('show', ['task' => $task]);
     }
 
     /**

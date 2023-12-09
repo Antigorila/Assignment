@@ -15,25 +15,6 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-<!--
-<div class="nav-side-menu">
-    <div class="brand"><h3>Categories</h3></div>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-    <div class="menu-list">
-        @foreach (\App\Models\Category::all() as $category)
-        <li data-toggle="collapse" data-target="#{{ $category->id }}" class="collapsed">
-            <a href="#"><i class="fa fa-book fa-lg"></i> {{ $category->category_name }} <span class="arrow"></span></a>
-        </li>
-        <ul class="sub-menu collapse" id="{{ $category->id }}">
-            @for ($i = 1; $i <= 5; $i++)
-                <li>Title</li>
-            @endfor
-        </ul>
-        @endforeach
-    </div>
-</div>
--->
-
 <div class="nav-side-menu">
     <div class="brand"><h3>Categories</h3></div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -44,12 +25,16 @@
         </li>
         <ul class="sub-menu collapse" id="{{ $category->id }}">
             @foreach ($category->tasks as $task)
-                <li>{{ $task->assignment_title }}</li>
+            <form action="{{ route('tasks.show', $task) }}" method="GET">
+                <!--<li id="{{ $task->id }}"> </li>-->
+                    <li><button type="submit" class="btn taskButton"><p class="feher">{{ $task->assignment_title }}</p></button></li>
+            </form>
             @endforeach
         </ul>
         @endforeach
     </div>
 </div>
+
 
   
 @endsection
