@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('assignment_title');
             $table->string('assignment');
-            $table->foreignId('category_id')->default(1);
+            $table->foreignId('category_id');
             $table->timestamps();
         });
     }
