@@ -2,6 +2,7 @@
 
 @section('content')
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -26,15 +27,26 @@
         <ul class="sub-menu collapse" id="{{ $category->id }}">
             @foreach ($category->tasks as $task)
             <form action="{{ route('tasks.show', $task) }}" method="GET">
-                <!--<li id="{{ $task->id }}"> </li>-->
                     <li><button type="submit" class="btn taskButton"><p class="feher">{{ $task->assignment_title }}</p></button></li>
             </form>
             @endforeach
         </ul>
         @endforeach
+        @if (Auth::user()->rank === "teacher")
+        <li data-toggle="collapse" data-target="#new" class="collapsed">
+            <a href="#"><i class="fa fa-plus fa-lg"></i> Add new <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="new">
+            <form action="{{ route('add.add_category') }}" method="GET">
+                <li><button type="submit" class="btn taskButton"><p class="feher">Add new category</p></button></li>
+            </form>
+            <form action="{{ route('add.add_task') }}" method="GET">
+                <li><button type="submit" class="btn taskButton"><p class="feher">Add new task</p></button></li>
+            </form>
+        </ul>
+        @endif
     </div>
 </div>
 
 
-  
 @endsection
