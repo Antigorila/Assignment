@@ -37,10 +37,10 @@
             <a href="#"><i class="fa fa-plus fa-lg"></i> Add new <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="new">
-            <form action="{{ route('add.add_category') }}" method="GET">
+            <form action="{{ route('categories.create') }}" method="GET">
                 <li><button type="submit" class="btn taskButton"><p class="feher">Add new category</p></button></li>
             </form>
-            <form action="{{ route('add.add_task') }}" method="GET">
+            <form action="{{ route('tasks.create') }}" method="GET">
                 <li><button type="submit" class="btn taskButton"><p class="feher">Add new task</p></button></li>
             </form>
         </ul>

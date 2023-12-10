@@ -9,6 +9,9 @@ class category extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'category_name'
+    ];
     public function tasks() {
         return $this->hasMany(Task::class);
     }
