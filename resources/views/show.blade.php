@@ -11,7 +11,7 @@
             <hr>
             <form>
                 <button type="button" class="btn btn-primary" onclick="checkAnswer()">Check</button>
-                <button type="button" class="btn btn-primary">Show answer</button>
+                <button type="button" class="btn btn-primary" onclick="showAnswer()">Show answer</button>
             </form>
         </div>
     </div>
@@ -37,27 +37,19 @@
     replaceAsteriskSequences(assignment);
 
     function readTextAndInputs() {
-        // Get the paragraph element by its ID
         var paragraphElement = document.getElementById('assignment');
 
-        // Initialize an empty string to store the result
         var resultString = "";
 
-        // Iterate through child nodes of the paragraph
         for (var i = 0; i < paragraphElement.childNodes.length; i++) {
             var node = paragraphElement.childNodes[i];
 
-            // Check if the node is a text node
             if (node.nodeType === Node.TEXT_NODE) {
-                // Add the text content to the result string
                 resultString += node.textContent;
             } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'INPUT') {
-                // If the node is an input element, add its value to the result string
                 resultString += node.value;
             }
         }
-
-        // Display the result (you can also use it as needed)
         return resultString;
     }
     function checkAnswer()
@@ -70,10 +62,12 @@
             else
             {
                 alert("Wrong!");
-                alert(answer);
-                alert(readTextAndInputs());
             }
         }
+    function showAnswer()
+    {
+        alert("{{ $task->answer }}");
+    }
 </script>
 
 

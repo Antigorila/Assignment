@@ -31,6 +31,7 @@ class TaskFactory extends Factory
             'assignment' => fake()->randomElement($data),
             'category_id' => fake()->numberBetween(1,10),
             'description' => fake()->sentences(5, true),
+            'answer' => fake()->words(4, true),
         ];
     }
 }

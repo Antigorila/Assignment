@@ -33,11 +33,12 @@ class TaskController extends Controller
             'category_id' => $request->category_id,
             'assignment_title' => $request->assignment_title,
             'assignment' => $request->assignment,
-            'answer	' => $request->answer,
+            'answer' => $request->answer,
             'description' => $request->description,
         ]);
         
         $task->save();
+        return view('add.add_task');
     }
 
     /**
