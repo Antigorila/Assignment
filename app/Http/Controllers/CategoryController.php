@@ -31,6 +31,7 @@ class CategoryController extends Controller
     {
         $category = category::create($request->all());
         $category->save();
+        return view('add.add_category');
     }
 
     /**

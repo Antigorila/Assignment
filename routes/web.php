@@ -24,15 +24,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/tasks', App\Http\Controllers\TaskController::class);
-
 /*
 Route::post('/addCategory', [AddController::class, 'addCategory'])->name('add.add_category');
 Route::post('/addTask', [AddController::class, 'addTask'])->name('add.add_task');
 */
 
 Route::resource('/categories', App\Http\Controllers\CategoryController::class);
-
+Route::resource('/tasks', App\Http\Controllers\TaskController::class);
 
 /*
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');

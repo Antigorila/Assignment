@@ -29,7 +29,15 @@ class TaskController extends Controller
      */
     public function store(StoretaskRequest $request)
     {
-        //
+        $task = task::create([
+            'category_id' => $request->category_id,
+            'assignment_title' => $request->assignment_title,
+            'assignment' => $request->assignment,
+            'answer	' => $request->answer,
+            'description' => $request->description,
+        ]);
+        
+        $task->save();
     }
 
     /**

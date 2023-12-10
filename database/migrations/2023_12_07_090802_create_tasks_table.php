@@ -15,6 +15,8 @@ return new class extends Migration
             $table->integer('id',true);
             $table->string('assignment_title');
             $table->string('assignment');
+            $table->string('answer')->nullable();
+            $table->text('description')->nullable();
             $table->integer('category_id')->index('category_id');
 
             $table->timestamps();
