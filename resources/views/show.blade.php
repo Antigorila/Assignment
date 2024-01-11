@@ -1,10 +1,9 @@
 @include('home')
 
 <div class="container">
-    <div class="card">
+    <div class="card-kerd">
         <div class="card-body">
             <h4 class="card-title">{{ $task->assignment_title }}</h4>    
-            <p class="card-text">{{ $task->answer }}</p>
             <p class="card-text">{{ $task->description }}</p> 
             <p class="card-text" id="assignment"></p>
             <p id="result"></p>
@@ -69,8 +68,3 @@
         alert("{{ $task->answer }}");
     }
 </script>
-
-
-
-
-

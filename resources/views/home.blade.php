@@ -21,27 +21,27 @@
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
     <div class="menu-list">
         @foreach (\App\Models\Category::all() as $category)
-        <li data-toggle="collapse" data-target="#{{ $category->id }}" class="collapsed">
-            <a href="#"><i class="fa fa-book fa-lg"></i> {{ $category->category_name }} <span class="arrow"></span></a>
+        <li  class="collapsed">
+            <a href="#" data-toggle="collapse" data-target="#{{ $category->id }}"><i class="fa fa-book fa-lg"></i> {{ $category->category_name }} <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="{{ $category->id }}">
             @foreach ($category->tasks as $task)
-            <form action="{{ route('tasks.show', $task) }}" method="GET">
-                    <li><button type="submit" class="btn taskButton"><p class="feher">{{ $task->assignment_title }}</p></button></li>
+            <form action="{{ route('tasks.show', $task) }}" method="GET">    
+                <button type="submit" class="btn taskButton"><p class="feher">{{ $task->assignment_title }}</p></button>
             </form>
             @endforeach
         </ul>
         @endforeach
         @if (Auth::user()->rank === "teacher")
-        <li data-toggle="collapse" data-target="#new" class="collapsed">
-            <a href="#"><i class="fa fa-plus fa-lg"></i> Add new <span class="arrow"></span></a>
+        <li class="collapsed">
+            <a data-toggle="collapse" data-target="#new" href="#"><i class="fa fa-plus fa-lg"></i> Add new <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="new">
             <form action="{{ route('categories.create') }}" method="GET">
-                <li><button type="submit" class="btn taskButton"><p class="feher">Add new category</p></button></li>
+                <button type="submit" class="btn taskButton"><p class="feher">Add new category</p></button>
             </form>
             <form action="{{ route('tasks.create') }}" method="GET">
-                <li><button type="submit" class="btn taskButton"><p class="feher">Add new task</p></button></li>
+                <button type="submit" class="btn taskButton"><p class="feher">Add new task</p></button>
             </form>
         </ul>
         @endif

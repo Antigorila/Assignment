@@ -1,10 +1,20 @@
-.card {
+.card-kerd {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
-  background-color: #000000;
-  color: rgb(174, 174, 174);
+  float:right;
+  width: 80%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
+
+.dropdown{
+  float: left !important;
+  position: absolute !important;
+  right: 20px !important;
+  top: 5px !important;
+}
+
 body {
   background-color: rgb(109, 109, 109);
   color: rgb(160, 160, 160);

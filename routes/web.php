@@ -4,6 +4,7 @@ use App\Http\Controllers\AddController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,8 @@ Route::post('/addTask', [AddController::class, 'addTask'])->name('add.add_task')
 
 Route::resource('/categories', App\Http\Controllers\CategoryController::class);
 Route::resource('/tasks', App\Http\Controllers\TaskController::class);
-
+Route::resource('/eredmenyeks', App\Http\Controllers\EredmenyekController::class);
+Route::post('/task/{id}/upload', [TaskController::class, 'upload']);
 /*
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
